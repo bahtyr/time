@@ -50,7 +50,21 @@ body {
 }
 
 .topic-duration {
+	position: absolute;
 	color: hsl(0, 0%, 50%);
+	bottom: 14px;
+}
+
+/* Color Circle */
+
+.topic-name::before {
+	content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 6px;
+    border-radius: 100%;
+    background-color: var(--data-color);
 }
 
 /* Background Color */
