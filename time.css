@@ -1,0 +1,43 @@
+/* Reset */
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img{height:auto;max-width:100%}
+
+body {
+	background-color: #000;
+	color: hsl(0, 0%, 80%);
+	font-family: monospace;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 16px;
+	grid-gap: 12px;
+}
+
+.topic {
+	height: 80px;
+	width: 200px;
+	padding: 8px;
+	background-color: var(--data-color);
+	border-radius: 6px;
+
+	opacity: .6;
+	transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+	transition-property: opacity, box-shadow, background-color;
+	user-select: none;
+	cursor: pointer;
+}
+
+.topic:hover {
+	box-shadow: 0 2px 6px var(--data-color);
+}
+
+.topic.active {
+	opacity: 1;
+}
+
+.topic-name {
+	font-weight: bold;
+	color: hsl(0, 0%, 80%);
+}
+
+.topic-duration {
+	color: hsl(0, 0%, 75%);
+}
