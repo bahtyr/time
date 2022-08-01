@@ -8,7 +8,8 @@ body {
 	grid-gap: 12px;
 	margin: 0 auto;
 	max-width: 1280px;
-	padding: 20vh 0;
+	padding-top: 20vh;
+	padding-bottom: 12px;
 
 	font-family: monospace;
 	color: hsl(0, 0%, 74%);
@@ -154,3 +155,11 @@ h2 span {
 
 .progressbar #bar1 { border-color: hsl(0, 0%, 45%); }
 .progressbar #bar2 { border-color: hsl(0, 0%, 20%); }
+
+/************************************************
+ * Canvas
+ ************************************************/
+
+#canvas-wrapper {
+	flex-basis: 100%;
+}

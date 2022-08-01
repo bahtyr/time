@@ -14,9 +14,11 @@ class Topic {
 		min: 0,
 		sec: 0,
 		total: 0,
+		callback: function() {},
 		increase() {
 			this.total++;
 			this.sec++;
+			this.callback();
 			if (this.sec >= 60) {
 				this.sec = 0;
 				this.min++;
@@ -63,6 +65,7 @@ class Topic {
 
 	count() {
 		this.time.increase();
+		this.time.callback = () => canvas.draw(this.color);
 		this.el.children[1].textContent = this.time.toString();
 	}
 }
