@@ -57,7 +57,7 @@ class Topic {
 			this.isActive = true;
 			this.el.classList.add("active");
 			clearTimeout(this.interval);
-			this.interval = setInterval(this.count.bind(this), 100);
+			this.interval = setInterval(this.count.bind(this), 1000);
 		}
 	}
 
