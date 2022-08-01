@@ -7,13 +7,12 @@
 	<link rel="stylesheet" href="./time.css">
 </head>
 <body>
-	<script type="text/javascript">
-		const el = document.createElement('h2');
-		const options = { weekday: 'long', month: 'numeric', day: '2-digit' };
-		const date = new Date().toLocaleDateString("en-US", options).split(", ");
-		el.innerHTML = `${date[0]}<span> ${date[1]}</span>`;
-		document.body.appendChild(el);
-	</script>
+	<h2></h2>
+	<div class="progressbar">
+		<div id="bar1"></div>
+		<div id="bar2" style="--color: #191919"></div>
+	</div>
+	<script src="today.js"></script>
 	<script src="time.js"></script>
 	<div></div><div></div><div></div><div></div><div></div>
 </body>

@@ -134,3 +134,23 @@ h2 span {
 	color: hsl(0, 0%, 50%);
 	font-family: monospace;
 }
+
+/************************************************
+ * Progress Bar
+ ************************************************/
+
+.progressbar {
+	display: flex;
+	flex-basis: 100%;
+	grid-gap: var(--size);
+	margin-bottom: 16px;
+	--size: 4px;
+}
+
+.progressbar div {
+	--color: #fff;
+	border-top: var(--size) dotted var(--color);
+}
+
+.progressbar #bar1 { border-color: hsl(0, 0%, 45%); }
+.progressbar #bar2 { border-color: hsl(0, 0%, 20%); }
