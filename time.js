@@ -3,6 +3,7 @@ var topics = [];
 class Topic {
 	position;
 	el;
+	interval;
 
 	name;
 	duration = 0;
@@ -26,25 +27,21 @@ class Topic {
 	}
 
 	click() {
-		if (this.isActive) this.stop();
-		else this.start();
+		if (this.isActive) {
+			this.isActive = false;
+			this.el.classList.remove("active");
+			clearTimeout(this.interval);
+		}
+		else {
+			this.isActive = true;
+			this.el.classList.add("active");
+			clearTimeout(this.interval);
+			this.interval = setInterval(this.count.bind(this), 100);
+		}
 	}
 	
-	start() {
-		this.el.classList.add("active");
-		this.isActive = true;
-		setTimeout(this.count.bind(this), 100);
-	}
-
-	stop() {
-		this.el.classList.remove("active");
-		this.isActive = false
-	}
-
 	count() {
 		this.duration += 1;
-		if (this.isActive) 
-			setTimeout(this.count.bind(this), 100);
 		this.el.children[1].textContent = this.duration;
 	}
 }
@@ -69,9 +66,9 @@ function randomColor() {
 	return c;
 }
 
-topics.push(new Topic("DB",       colors[5], topics.length));
-topics.push(new Topic("UI",       colors[7], topics.length));
-topics.push(new Topic("API",      colors[3], topics.length));
+topics.push(new Topic("DB",         colors[5], topics.length));
+topics.push(new Topic("UI",         colors[7], topics.length));
+topics.push(new Topic("API",        colors[3], topics.length));
 topics.push(new Topic("JavaScript", colors[8], topics.length));
-topics.push(new Topic("HTML",     colors[8], topics.length));
-topics.push(new Topic("CSS",     colors[8], topics.length));
+topics.push(new Topic("HTML",       colors[8], topics.length));
+topics.push(new Topic("CSS",        colors[8], topics.length));
