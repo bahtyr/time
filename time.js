@@ -6,9 +6,30 @@ class Topic {
 	interval;
 
 	name;
-	duration = 0;
 	color;
 	isActive = false;
+
+	time = {
+		hr: 0,
+		min: 0,
+		sec: 0,
+		total: 0,
+		increase() {
+			this.total++;
+			this.sec++;
+			if (this.sec >= 60) {
+				this.sec = 0;
+				this.min++;
+				if (this.min >= 60) {
+					this.min = 0;
+					this.hr++;
+				}
+			}
+		},
+		toString() {
+			return (this.hr > 0 ? this.hr + "h " : "") + (this.min > 0 ? this.min + "m " : "") + (this.sec + "s ");
+		},
+	};
 
 	constructor(name, color, pos) {
 		this.name = name;
@@ -39,10 +60,10 @@ class Topic {
 			this.interval = setInterval(this.count.bind(this), 100);
 		}
 	}
-	
+
 	count() {
-		this.duration += 1;
-		this.el.children[1].textContent = this.duration;
+		this.time.increase();
+		this.el.children[1].textContent = this.time.toString();
 	}
 }
 
