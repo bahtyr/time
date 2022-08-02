@@ -9,14 +9,24 @@
 <body>
 	<header>
 		<h1>time tracker</h1>
-		<div class="btn">New</div>
+		<div class="btn" id="btn-new">New</div>
 	</header>
 	<div id="today"><h4>...</h4><canvas id="canvas-today"></canvas></div>
 	<div id="list"><div id="hidden-item"></div><div></div><div></div><div></div><div></div></div>
 	<div><canvas id="canvas-main"></canvas></div>
 
+	<div class="modal" id="modal-new"><div class="modal-content modal-new">
+		<svg class="modal-close" style="width:16px;height:16px" viewBox="0 0 24 24"><path fill="currentColor" d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" /></svg>
+		<h3>New</h3>
+		<input type="text" name="input-new-title" id="input-new-title">
+		<div class="btn" id="btn-new-save">Save</div>
+	</div></div>
+
 	<script src="canvas.js"></script>
+	<script src="modal.js"></script>
+
 	<script src="today.js"></script>
 	<script src="time.js"></script>
+	<script src="edit.js"></script>
 </body>
 </html>

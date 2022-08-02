@@ -5,6 +5,7 @@ body {
 	margin: 0 auto;
 	max-width: 1280px;
 	padding-bottom: 12px;
+	overflow: overlay; /* if scrollbar appears, don't push / resize page content */
 
 	font-family: monospace;
 	color: hsl(0, 0%, 74%);
@@ -182,4 +183,60 @@ h4 {
 
 #today > * {
 	position: absolute;
+}
+
+
+
+
+/************************************************
+ * New Modal
+ ************************************************/
+
+h3 {
+	/*margin-bottom: 8px;*/
+	color: hsl(0, 0%, 74%);
+	font-size: 1.25rem;
+	margin-bottom: 12px;
+}
+
+html.preventScroll,
+body.preventScroll { overflow: hidden !important; }
+
+.modal {
+	display: none;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	background-color: hsla(0, 0%, 0%, .4);
+}
+
+.modal.show {
+	display: flex;
+}
+
+.modal-content {
+	position: fixed;
+	margin-top: 20vh;
+	padding: 40px 20px;
+	display: inline-block;
+	border-radius: 6px;
+	background-color: hsl(0, 0%, 18%);
+}
+
+.modal-close {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	cursor: pointer;
+}
+
+.modal input {
+	color: hsl(0, 0%, 74%);
+	background-color: hsl(0, 0%, 32%);
+	padding: 4px 0;
+	border: none;
 }
