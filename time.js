@@ -1,4 +1,6 @@
 var topics = [];
+const list = document.getElementById("list");
+const hiddenItem = document.getElementById("hidden-item");
 
 class Topic {
 	position;
@@ -46,7 +48,7 @@ class Topic {
 		this.el.setAttribute("onclick", `topics[${this.position}].click()`);
 		this.el.style = `--data-color: ${this.color};`;
 		this.el.innerHTML = `<p class="topic-name">${this.name}</p><p class="topic-duration"></p>`;
-		document.body.appendChild(this.el);
+		list.insertBefore(this.el, hiddenItem);
 	}
 
 	click() {

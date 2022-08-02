@@ -2,10 +2,6 @@
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img{height:auto;max-width:100%}
 
 body {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	grid-gap: 12px;
 	margin: 0 auto;
 	max-width: 1280px;
 	padding-bottom: 12px;
@@ -16,6 +12,14 @@ body {
 	line-height: 1;
 }
 
+#list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	grid-gap: 12px;
+	margin-bottom: 16px;
+}
+
 /************************************************
  * Header
  ************************************************/
@@ -23,7 +27,7 @@ body {
 header {
 	width: 100%;
 	margin-top: 24px;
-	margin-bottom: 2vh;
+	margin-bottom: 4vh;
 	border-radius: 4px;
 	padding: 12px 0;
 	user-select: none;
@@ -162,9 +166,9 @@ div:empty {
  ************************************************/
 
 h2 {
-	flex-basis: 100%;
 	font-size: 1.25rem;
 	font-family: sans-serif;
+	margin-bottom: 8px;
 }
 
 h2 span {
@@ -178,7 +182,6 @@ h2 span {
 
 .progressbar {
 	display: flex;
-	flex-basis: 100%;
 	grid-gap: var(--size);
 	margin-bottom: 16px;
 	--size: 4px;
@@ -195,7 +198,3 @@ h2 span {
 /************************************************
  * Canvas
  ************************************************/
-
-.canvas-wrapper {
-	flex-basis: 100%;
-}
