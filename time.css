@@ -8,13 +8,49 @@ body {
 	grid-gap: 12px;
 	margin: 0 auto;
 	max-width: 1280px;
-	padding-top: 20vh;
 	padding-bottom: 12px;
 
 	font-family: monospace;
 	color: hsl(0, 0%, 74%);
 	background-color: hsl(0, 0%, 2%);
 	line-height: 1;
+}
+
+/************************************************
+ * Header
+ ************************************************/
+
+header {
+	width: 100%;
+	margin-top: 24px;
+	margin-bottom: 2vh;
+	border-radius: 4px;
+	padding: 12px 0;
+	user-select: none;
+}
+
+h1 {
+	display: inline-block;
+	font-size: 1rem;
+}
+
+/************************************************
+ * Button
+ ************************************************/
+
+.btn {
+	display: inline-block;
+	float: right;
+	padding: 6px 16px;
+	text-transform: lowercase;
+	font-weight: bold;
+	background-color: hsl(0, 0%, 12%);
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-color: hsl(0, 0%, 22%);
 }
 
 /************************************************
