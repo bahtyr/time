@@ -1,31 +1,38 @@
-const pos = { i: 0,	row: 0 };
-const shape = { width: 4, height: 8, gapX: 4, gapY: 8 };
+class Canvas {
+	pos = { i: 0, row: 0 };
+	shape = { width: 4, height: 8, gapX: 4, gapY: 8 };
+	canvas;
+	ctx;
+	size;
 
-const canvas = document.getElementsByTagName("canvas")[0];
-const ctx = canvas.getContext("2d");
+	constructor(id) {
+		this.canvas = document.getElementById(id);
+		this.ctx = this.canvas.getContext("2d");
 
-const scale = window.devicePixelRatio;
-const size = document.getElementById("canvas-wrapper").offsetWidth;
-canvas.style.width  = `${size}px`;
-canvas.style.height = `${400}px`;
-canvas.width  = Math.floor(size * scale);
-canvas.height = Math.floor(400 * scale);
-ctx.scale(scale, scale);
-
-canvas.draw = function(color) {
-	let x = (shape.width + shape.gapX) * pos.i;
-
-	if (x + shape.width > size) {
-		pos.row++;
-		pos.i = 0;
-		x = 0;
+		let scale = window.devicePixelRatio;
+		this.size = this.canvas.parentElement.offsetWidth;
+		this.canvas.style.width  = `${this.size}px`;
+		this.canvas.style.height = `${400}px`;
+		this.canvas.width  = Math.floor(this.size * scale);
+		this.canvas.height = Math.floor(400 * scale);
+		this.ctx.scale(scale, scale);
 	}
 
-	let y = (shape.height + shape.gapY) * pos.row;
-	pos.i++;
+	draw(color) {
+		let x = (this.shape.width + this.shape.gapX) * this.pos.i;
 
-	ctx.fillStyle = color;
-	ctx.fillRect(x, y, shape.width, shape.height);
+		if (x + this.shape.width > this.size) {
+			this.pos.row++;
+			this.pos.i = 0;
+			x = 0;
+		}
+
+		let y = (this.shape.height + this.shape.gapY) * this.pos.row;
+		this.pos.i++;
+
+		this.ctx.fillStyle = color;
+		this.ctx.fillRect(x, y, this.shape.width, this.shape.height);
+	}
 }
 
-// for (let x of new Array(100)) canvas.draw(colors[0]);
+const canvas = new Canvas("canvas-main");
