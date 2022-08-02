@@ -35,6 +35,10 @@ class Topic {
 		},
 	};
 
+	static fromJson(json) {
+		return new Topic(json.name, json.color, json.position);
+	}
+
 	constructor(name, color, pos) {
 		this.name = name;
 		this.color = color;
@@ -72,6 +76,9 @@ class Topic {
 	}
 }
 
+/************************************************
+ * Colors
+*************************************************/
 
 var colors = [
 	"hsla(271, 70%, 40%, 1)",
@@ -92,9 +99,29 @@ function randomColor() {
 	return c;
 }
 
-topics.push(new Topic("DB",         colors[5], topics.length));
-topics.push(new Topic("UI",         colors[7], topics.length));
-topics.push(new Topic("API",        colors[3], topics.length));
-topics.push(new Topic("JavaScript", colors[8], topics.length));
-topics.push(new Topic("HTML",       colors[8], topics.length));
-topics.push(new Topic("CSS",        colors[8], topics.length));
+
+/************************************************
+ * Read / Write
+*************************************************/
+
+const autoSave = setInterval(saveData, 15 * 60 * 1000);;
+
+readData();
+
+function readData() {
+	if (localStorage.timejs != null) {
+		arr = JSON.parse(localStorage.timejs);
+		for (let topic of arr) {
+			topics.push(Topic.fromJson(topic));
+		}
+	}
+	else { //first time
+		topics.push(new Topic("Topic 1",  colors[5], topics.length));
+		topics.push(new Topic("Topic 2",  colors[7], topics.length));
+		topics.push(new Topic("Topic 3",  colors[3], topics.length));
+	}
+}
+
+function saveData() {
+	localStorage.setItem("timejs", JSON.stringify(topics));
+}
