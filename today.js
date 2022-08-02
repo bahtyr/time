@@ -15,7 +15,7 @@ const canvasToday = new Canvas("canvas-today", 40);
 canvasToday.shape = { width: 3, height: 25, gapX: 6, gapY: 0};
 canvasToday.offset = 46 + 4;
 canvasToday.allowNewLine = false;
-canvasToday.t = setInterval(this.print, 15 * 60 * 1000);
+canvasToday.t = setInterval(canvasToday.print, 15 * 60 * 1000);
 
 canvasToday.print = function() {
 	//calculate day progress
