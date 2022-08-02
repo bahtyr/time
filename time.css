@@ -27,7 +27,7 @@ body {
 header {
 	width: 100%;
 	margin-top: 24px;
-	margin-bottom: 4vh;
+	margin-bottom: 0px;
 	border-radius: 4px;
 	padding: 12px 0;
 	user-select: none;
@@ -54,7 +54,7 @@ h1 {
 }
 
 .btn:hover {
-	background-color: hsl(0, 0%, 22%);
+	background-color: hsl(0, 0%, 20%);
 }
 
 /************************************************
@@ -165,36 +165,21 @@ div:empty {
  * Today
  ************************************************/
 
-h2 {
-	font-size: 1.25rem;
-	font-family: sans-serif;
-	margin-bottom: 8px;
+h4 {
+	display: inline-block;
+	text-transform: uppercase;
+	font-weight: bolder;
+	padding: 6px 12px;
+	background-color: hsl(0, 0%, 20%);
+	user-select: none;
 }
 
-h2 span {
-	color: hsl(0, 0%, 50%);
-	font-family: monospace;
+#today {
+	height: 25px;
+	margin-top: 32px;
+	margin-bottom: 18px;
 }
 
-/************************************************
- * Progress Bar
- ************************************************/
-
-.progressbar {
-	display: flex;
-	grid-gap: var(--size);
-	margin-bottom: 16px;
-	--size: 4px;
+#today > * {
+	position: absolute;
 }
-
-.progressbar div {
-	--color: #fff;
-	border-top: var(--size) dotted var(--color);
-}
-
-.progressbar #bar1 { border-color: hsl(0, 0%, 45%); }
-.progressbar #bar2 { border-color: hsl(0, 0%, 20%); }
-
-/************************************************
- * Canvas
- ************************************************/
