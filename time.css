@@ -237,6 +237,6 @@ body.preventScroll { overflow: hidden !important; }
 .modal input {
 	color: hsl(0, 0%, 74%);
 	background-color: hsl(0, 0%, 32%);
-	padding: 4px 0;
+	padding: 4px;
 	border: none;
 }
